@@ -1,6 +1,6 @@
 ### INSTALL AND RUN PROJECT
 
-### Command (Console)
+### Commands (Console)
 
 1. cd test
 2. npm i
