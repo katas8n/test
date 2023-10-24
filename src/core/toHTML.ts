@@ -27,6 +27,7 @@ export const toHTML = (instance: IComponent) => {
         }
 
         if (attributes) {
+            console.log(attributes);
             for (let key in attributes) {
                 element.setAttribute(key, attributes[key]);
             }

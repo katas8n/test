@@ -3,7 +3,7 @@ import { toHTML } from './toHTML';
 export interface IComponent {
     tagName?: string;
     className?: string;
-    children?: object[];
+    children?: object[] | HTMLElement[];
     events?: object[];
     textContent?: string;
     html?: string;

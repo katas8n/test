@@ -1,17 +1,29 @@
 import './style.css';
 
-import {
-    Component,
-    toHTML,
-    render,
-    appendElement,
-    appendElements
-} from './core/index';
+import { render, appendElement } from './core/index';
 
-import { Form, Header, Footer } from './components/index';
+import { Form, Header, Footer, Main } from './components/index';
+import { App } from './components/App';
 
-const app = [new Header({}), new Form({}), new Footer({})];
+export enum form {
+    login = 'login',
+    register = 'register'
+}
+
+const main = new Main({
+    children: [
+        new Form({
+            type: form.register
+        })
+    ]
+});
+
+const appChildren = [new Header({}), main, new Footer({})];
+
+const app = new App({
+    children: appChildren
+}).toHTML();
 
 const body = document.getElementsByTagName('body');
 
-body[0].append(...app);
+appendElement(body[0], app);
